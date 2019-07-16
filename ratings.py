@@ -13,7 +13,8 @@ def restaurant_rating(file):
         restaurant, rating = line.split(':')
         
         rest_dict[restaurant] = int(rating)
-        # {key : value for key, value in [restaurant, rating]}
-    return (rest_dict)
 
-print(restaurant_rating(file_open))
+    for item, num in sorted(rest_dict.items()):
+        print(f"{item} is rated at {num}")
+
+restaurant_rating(file_open)
